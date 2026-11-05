@@ -1,0 +1,274 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoveMate | Packers & Movers</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="brand">
+            <span class="brand-icon">🚚</span>
+            <div>
+                <h2>MoveMate</h2>
+                <small>Moving Solutions</small>
+            </div>
+        </div>
+
+        <p class="menu-heading">MAIN MENU</p>
+
+        <nav>
+            <a href="#dashboard" class="nav-link active">▦ Dashboard</a>
+            <a href="#bookings" class="nav-link">▤ Bookings</a>
+            <a href="#bookingForm" class="nav-link">＋ New Booking</a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <div class="help-card">
+                <span>📦</span>
+                <h3>Move with confidence!</h3>
+                <p>Manage your moving business in one place.</p>
+            </div>
+            <p class="copyright">MoveMate © 2026</p>
+        </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content" id="dashboard">
+
+        <header class="topbar">
+            <div>
+                <h1>Dashboard</h1>
+                <p>Welcome back! Here's your business overview.</p>
+            </div>
+            <div class="admin">
+                <span>👤</span>
+                <div>
+                    <strong>Admin</strong>
+                    <small>Administrator</small>
+                </div>
+            </div>
+        </header>
+
+        <!-- HERO BANNER -->
+        <section class="hero">
+            <div class="hero-content">
+                <span>PACKING • MOVING • DELIVERING</span>
+                <h2>Making every move<br>simple and safe.</h2>
+                <p>Manage your relocation bookings with ease.</p>
+                <a href="#bookingForm" class="hero-btn">+ Create Booking</a>
+            </div>
+            <img
+                src="https://images.unsplash.com/photo-1600518464441-9306b00b9811?w=800"
+                alt="Moving and packing boxes">
+        </section>
+
+        <!-- STATISTICS -->
+        <section class="stats-grid">
+
+            <div class="stat-card">
+                <div class="stat-icon purple">📦</div>
+                <p>Total Bookings</p>
+                <h2 id="totalBookings">0</h2>
+                <small>All registered orders</small>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon orange">🚚</div>
+                <p>Active Moves</p>
+                <h2 id="activeMoves">0</h2>
+                <small>Jobs in progress</small>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon green">💰</div>
+                <p>Total Revenue</p>
+                <h2 id="totalRevenue">₹0</h2>
+                <small>From all bookings</small>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon blue">⏳</div>
+                <p>Pending Payments</p>
+                <h2 id="pendingPayments">₹0</h2>
+                <small>Amount outstanding</small>
+            </div>
+
+        </section>
+
+        <!-- BOOKING FORM -->
+        <section class="panel" id="bookingForm">
+            <div class="section-heading">
+                <div>
+                    <h2 id="formTitle">Create New Booking</h2>
+                    <p>Enter customer and moving details.</p>
+                </div>
+            </div>
+
+            <form id="moveForm">
+
+                <input type="hidden" id="bookingId">
+
+                <div class="form-grid">
+
+                    <div class="field">
+                        <label>Customer Name *</label>
+                        <input type="text" id="customerName"
+                               placeholder="Enter customer name" required>
+                    </div>
+
+                    <div class="field">
+                        <label>Mobile Number *</label>
+                        <input type="tel" id="mobile"
+                               pattern="[0-9]{10}"
+                               maxlength="10"
+                               placeholder="10 digit mobile number"
+                               required>
+                    </div>
+
+                    <div class="field">
+                        <label>Moving Date *</label>
+                        <input type="date" id="movingDate" required>
+                    </div>
+
+                    <div class="field">
+                        <label>Vehicle Type *</label>
+                        <select id="vehicle" required>
+                            <option value="">Select Vehicle</option>
+                            <option>Mini Truck</option>
+                            <option>Pickup Truck</option>
+                            <option>14 Feet Truck</option>
+                            <option>17 Feet Truck</option>
+                            <option>Container Truck</option>
+                        </select>
+                    </div>
+
+                    <div class="field full">
+                        <label>Pickup Address *</label>
+                        <input type="text" id="pickup"
+                               placeholder="Enter pickup address" required>
+                    </div>
+
+                    <div class="field full">
+                        <label>Delivery Address *</label>
+                        <input type="text" id="destination"
+                               placeholder="Enter delivery address" required>
+                    </div>
+
+                    <div class="field">
+                        <label>Moving Type</label>
+                        <select id="movingType">
+                            <option>Home Shifting</option>
+                            <option>Office Shifting</option>
+                            <option>Vehicle Transport</option>
+                            <option>Commercial Moving</option>
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <label>Estimated Amount (₹) *</label>
+                        <input type="number" id="amount"
+                               min="0" placeholder="Enter amount" required>
+                    </div>
+
+                    <div class="field">
+                        <label>Payment Status</label>
+                        <select id="payment">
+                            <option>Pending</option>
+                            <option>Paid</option>
+                            <option>Partial</option>
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <label>Booking Status</label>
+                        <select id="status">
+                            <option>Pending</option>
+                            <option>Confirmed</option>
+                            <option>In Transit</option>
+                            <option>Delivered</option>
+                            <option>Cancelled</option>
+                        </select>
+                    </div>
+
+                    <div class="field full">
+                        <label>Additional Notes</label>
+                        <textarea id="notes"
+                                  placeholder="Special instructions or details..."></textarea>
+                    </div>
+
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="primary-btn"
+                            id="saveBtn">Save Booking</button>
+                    <button type="button" class="secondary-btn"
+                            id="cancelEdit" hidden>Cancel</button>
+                </div>
+
+            </form>
+        </section>
+
+        <!-- BOOKING TABLE -->
+        <section class="panel" id="bookings">
+
+            <div class="section-heading booking-heading">
+                <div>
+                    <h2>Recent Bookings</h2>
+                    <p>Manage all your customer moving orders.</p>
+                </div>
+            </div>
+
+            <div class="filters">
+                <input type="search" id="search"
+                       placeholder="Search customer, ID or mobile...">
+
+                <select id="statusFilter">
+                    <option value="All">All Status</option>
+                    <option>Pending</option>
+                    <option>Confirmed</option>
+                    <option>In Transit</option>
+                    <option>Delivered</option>
+                    <option>Cancelled</option>
+                </select>
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Booking ID</th>
+                            <th>Customer</th>
+                            <th>Moving Date</th>
+                            <th>Route</th>
+                            <th>Amount</th>
+                            <th>Payment</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="bookingTable">
+                    </tbody>
+                </table>
+            </div>
+
+            <p class="table-footer" id="tableCount">Showing 0 bookings</p>
+        </section>
+
+        <footer>
+            MoveMate Management System | Built with HTML, CSS & JavaScript
+        </footer>
+
+    </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
